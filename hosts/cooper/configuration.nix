@@ -102,7 +102,7 @@
     nvidia =
     {
       open = false;
-      package = config.boot.kernelPackages.nvidiaPackages.stable
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       nvidiaSettings = true;
       powerManagement.finegrained = false;
       powerManagement.enable = false;
