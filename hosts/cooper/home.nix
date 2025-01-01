@@ -12,14 +12,9 @@ in
       # Home manager version
       enableNixpkgsReleaseCheck = false;
       stateVersion = "24.11";
-
-      packages = with pkgs;
-      [
+     
+      packages = with pkgs; [
         protonup
-        git
-        git-crypt
-        gnupg
-        pinentry-qt
       ];
       
       # For enabling proton
@@ -29,6 +24,11 @@ in
       };
     };
     
+    imports = 
+    [
+      ../../nixosModules/common
+    ];    
+ 
     services =
     {
       gpg-agent =
@@ -57,7 +57,7 @@ in
         {
           init.defaultBranch = "main";
           safe.directory = "/etc/nixos/";
-          safe.dictory = "/home/${username}/.dotfiles";
+          safe.dictory = "/home/${username}/.nix-config";
       };
     };
   };
