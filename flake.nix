@@ -11,29 +11,25 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
   let
     system = "x86_64-linux";
-    pkgs = import nixpkgs
-    {
+    secrets = builtins.fromJSON (builtins.readFile "${self}/.secrets/secrets.json");
+    pkgs = import nixpkgs {
       inherit system;
-      config =
-      {
+      config = {
         allowUnfree = true;
       };
     };
   in
   {
-    nixosConfigurations = 
-    {
-      cooper = nixpkgs.lib.nixosSystem
-      {
+    nixosConfigurations = {
+      cooper = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = 
-        [         
+        specialArgs = { inherit secrets; };
+        modules = [         
           ./hosts/cooper/configuration.nix 
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager{
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
            

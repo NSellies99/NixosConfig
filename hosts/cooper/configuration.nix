@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ secrets, config, pkgs, ... }:
 
 {
   # Bootloader.
@@ -65,6 +65,7 @@
     isNormalUser = true;
     description = "Cooper";
     extraGroups = [ "networkmanager" "wheel" ];
+    password = secrets.cooper.common.password;
   };
 
   # Install firefox.
