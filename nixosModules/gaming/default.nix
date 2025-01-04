@@ -1,6 +1,5 @@
 {
-  imports =
-  [
+  imports = [
     ./steam.nix
     ./lutris.nix
   ];

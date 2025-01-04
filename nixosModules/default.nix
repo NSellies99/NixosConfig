@@ -1,6 +1,5 @@
 {
-  imports =
-  [
+  imports = [
     ./common
     ./gaming
   ];

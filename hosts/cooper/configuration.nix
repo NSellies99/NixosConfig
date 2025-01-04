@@ -1,15 +1,23 @@
-{ secrets, config, pkgs, ... }:
+{
+  secrets,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # Define hostname.
   networking.hostName = "cooper";
 
   # Nix settings
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -51,8 +59,7 @@
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = 
-  {
+  services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
@@ -60,11 +67,13 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.cooper = 
-  {
+  users.users.cooper = {
     isNormalUser = true;
     description = "Cooper";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     password = secrets.cooper.common.password;
   };
 
@@ -73,35 +82,30 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Environment packages
-  environment.systemPackages = with pkgs; 
-  [
-   discord
-   keepass
-   vscode
+  environment.systemPackages = with pkgs; [
+    discord
+    keepass
+    vscode
   ];
 
-  imports =
-  [ 
-   ./hardware-configuration.nix
-   ../../nixosModules/gaming
+  imports = [
+    ./hardware-configuration.nix
+    ../../nixosModules/gaming
   ];
-  
+
   # Nvidia drivers
-  services.xserver =
-  {
-    videoDrivers = ["nvidia"];
+  services.xserver = {
+    videoDrivers = [ "nvidia" ];
   };
 
-  hardware =
-  {
+  hardware = {
     # OpenGL
     graphics.enable = true;
-    
+
     # Nvidia settings
-    nvidia =
-    {
+    nvidia = {
       open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       nvidiaSettings = true;
@@ -109,6 +113,6 @@
       powerManagement.enable = false;
     };
   };
- 
+
   system.stateVersion = "24.11";
 }

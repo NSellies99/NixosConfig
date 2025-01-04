@@ -6,10 +6,12 @@
     git-crypt
     gnupg
     pinentry-qt
+    pre-commit
+    cabal-install
+    ghc
   ];
 
-  programs.git =
-  {
+  programs.git = {
     enable = true;
   };
 }
