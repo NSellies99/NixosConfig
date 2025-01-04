@@ -6,16 +6,16 @@
     # Nix enhancement
     deadnix
     nh
-    nixfmt
     
     # File management
     zip
+    7zip
 
     # Office
-    libreoffice-qt
+      libreoffice-qt
     hunspell
-    hunspellDicts.en_US
+     hunspellDicts.en_US
     hunspellDicts.nl_nl
-  ];
+         ];
 }
 
