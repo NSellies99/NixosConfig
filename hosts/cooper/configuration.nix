@@ -114,5 +114,11 @@
     };
   };
 
+  # Limit generations to 10
+  boot.loader.systemd-boot.configurationLimit = 10;
+
+  # Optimize storage
+  nix.settings.auto-optimise-store = true;
+
   system.stateVersion = "24.11";
 }
