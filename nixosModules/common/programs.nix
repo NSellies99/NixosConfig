@@ -8,6 +8,7 @@
 
     # File management
     zip
+    unzip
 
     # Office
     libreoffice-qt
