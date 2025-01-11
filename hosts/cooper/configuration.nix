@@ -93,6 +93,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../nixosModules/gaming
+    ../../nixosModules/window-manager
   ];
 
   # Nvidia drivers
