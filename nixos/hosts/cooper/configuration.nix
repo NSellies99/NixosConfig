@@ -123,6 +123,7 @@
 
   system.stateVersion = "24.11";
 
+  # Fonts
   fonts.packages = with pkgs; [
     nerdfonts
   ];
