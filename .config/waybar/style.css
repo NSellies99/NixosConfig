@@ -1,0 +1,23 @@
+window#waybar {
+  background: #FA8128;
+  opacity: 0.8;
+  border-width: 2px;
+  border-color: #ED7117;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.module {
+  border-radius: 2px;
+  padding: 0px 4px;
+  font-size: 13px;
+}
+
+#workspaces {
+  font-size: 8px;
+}
+
+* {
+ font-family: JetBrainsMono Nerd Font;
+}
