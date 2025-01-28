@@ -22,5 +22,6 @@
     
     # All round
     grimblast
+    clamav
   ];
 }

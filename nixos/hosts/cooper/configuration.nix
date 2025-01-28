@@ -77,6 +77,15 @@
     password = secrets.cooper.common.password;
   };
 
+  users.users.clamav = {
+    isNormalUser = true;
+    description = "Clamav";
+    extraGroups = [ "clamav"];
+  };
+
+  users.groups.clamav = {};
+
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -94,6 +103,7 @@
     ./hardware-configuration.nix
     ../../nixosModules/gaming
     ../../nixosModules/window-manager
+    ../../nixosModules/common/clamav.nix
   ];
 
   # Nvidia drivers
