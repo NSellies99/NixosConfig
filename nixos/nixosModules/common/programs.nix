@@ -17,7 +17,8 @@
     hunspellDicts.nl_nl
    
     # Productivity
-    vim
+    neovide
+    neovim
     planify
     
     # All round
