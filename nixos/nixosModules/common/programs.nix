@@ -16,8 +16,7 @@
     hunspellDicts.en_US
     hunspellDicts.nl_nl
    
-    # Productivity
-    neovide
+    # Productivity  
     neovim
     planify
     
