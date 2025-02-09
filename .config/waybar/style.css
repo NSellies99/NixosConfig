@@ -6,6 +6,7 @@ window#waybar {
   border-style: solid;
   border-radius: 5px;
   padding: 5px;
+  margin: 50px;
 }
 
 .module {
