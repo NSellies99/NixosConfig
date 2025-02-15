@@ -11,11 +11,10 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
+    { self
+    , nixpkgs
+    , home-manager
+    , ...
     }@inputs:
     let
       system = "x86_64-linux";
@@ -28,6 +27,7 @@
       };
     in
     {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
       nixosConfigurations = {
         cooper = nixpkgs.lib.nixosSystem {
           inherit system;

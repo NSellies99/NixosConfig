@@ -1,8 +1,7 @@
-{
-  secrets,
-  config,
-  pkgs,
-  ...
+{ secrets
+, config
+, pkgs
+, ...
 }:
 
 {
@@ -80,10 +79,10 @@
   users.users.clamav = {
     isNormalUser = true;
     description = "Clamav";
-    extraGroups = [ "clamav"];
+    extraGroups = [ "clamav" ];
   };
 
-  users.groups.clamav = {};
+  users.groups.clamav = { };
 
 
   # Install firefox.
