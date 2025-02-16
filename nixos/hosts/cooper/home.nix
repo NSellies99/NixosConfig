@@ -1,9 +1,7 @@
 { pkgs, ... }:
 let
-  username = "cooper";
-  cursorUrl = "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Amber.tar.xz";
-  cursorHash = "sha256-yjLThKrxkyK1BrmvFEofQCqi4vfywf5UTc5dGWsRbYA=";
-  cursorName = "Bibata-Modern-Amber";
+  settings = builtins.fromJSON(builtins.readFile ( ./. + "/settings.json" ));
+  username = settings.user.username;
 in
 {
   home = {
@@ -19,7 +17,7 @@ in
       protonup
     ];
 
-    pointerCursor = import ../../home/cursor.nix ({ inherit pkgs cursorUrl cursorHash cursorName; });
+    pointerCursor = import ../../home/cursor.nix ({ inherit pkgs; cursor = settings.cursor; });
 
     # For enabling proton
     sessionVariables = {

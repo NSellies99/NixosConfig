@@ -1,4 +1,4 @@
-{ pkgs, cursorUrl, cursorHash, cursorName, ... }:
+{ pkgs, cursor, ... }:
 
 let
   getFrom = url: hash: name: {
@@ -16,8 +16,8 @@ let
   };
 in
 getFrom
-  cursorUrl
-  cursorHash
-  cursorName
+  cursor.url
+  cursor.hash
+  cursor.name
   
 
