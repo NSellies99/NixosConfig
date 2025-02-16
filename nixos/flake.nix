@@ -15,16 +15,10 @@
     , nixpkgs
     , home-manager
     , ...
-    }@inputs:
+    }:
     let
       system = "x86_64-linux";
       secrets = builtins.fromJSON (builtins.readFile "${self}/.secrets/secrets.json");
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
     in
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
