@@ -24,5 +24,6 @@
     # All round
     grimblast
     clamav
+    thunderbird
   ];
 }
