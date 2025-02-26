@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  settings = builtins.fromJSON(builtins.readFile ( ./. + "/settings.json" ));
+  settings = builtins.fromJSON (builtins.readFile (./. + "/settings.json"));
   username = settings.user.username;
 in
 {
