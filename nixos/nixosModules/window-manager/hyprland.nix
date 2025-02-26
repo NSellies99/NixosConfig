@@ -11,6 +11,11 @@
     xwayland.enable = true;
   };
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   environment.sessionVariables = {
     # Fixes cursor invisibility issue
     WLR_NO_HARDWARE_CURSOR = "1";
