@@ -91,13 +91,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Environment packages
-  environment.systemPackages = with pkgs; [
-    discord
-    keepass
-    vscode
-  ];
-
   imports = [
     ./hardware-configuration.nix
     ../../nixosModules/gaming

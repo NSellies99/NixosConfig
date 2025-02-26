@@ -25,5 +25,7 @@
     grimblast
     clamav
     thunderbird
+    gimp
+    keepass
   ];
 }
