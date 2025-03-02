@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
   settings = builtins.fromJSON (builtins.readFile (./. + "/settings.json"));
   username = settings.user.username;
@@ -15,6 +15,7 @@ in
 
     packages = with pkgs; [
       protonup
+      inputs.zen-browser.packages."${system}".default
     ];
 
     pointerCursor = import ../../home/cursor.nix ({ inherit pkgs; cursor = settings.cursor; });
