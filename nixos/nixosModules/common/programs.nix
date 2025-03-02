@@ -20,6 +20,7 @@
     # Productivity  
     neovim
     planify
+    obsidian
 
     # All round
     grimblast
