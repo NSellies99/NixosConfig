@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, zen-browser, ... }:
 let
   settings = builtins.fromJSON (builtins.readFile (./. + "/settings.json"));
   username = settings.user.username;
@@ -13,17 +13,19 @@ in
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.11";
 
-    packages = with pkgs; [
-      protonup
-      inputs.zen-browser.packages."${system}".default
-    ];
-
     pointerCursor = import ../../home/cursor.nix ({ inherit pkgs; cursor = settings.cursor; });
 
     # For enabling proton
     sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     };
+
+
+    packages = with pkgs; [
+      protonup
+      zen-browser
+    ];
+
   };
 
   imports = [

@@ -37,7 +37,7 @@
               home-manager.useUserPackages = true;
 
               home-manager.users.cooper = import ./hosts/cooper/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs; inherit system; };
+              home-manager.extraSpecialArgs = { inherit zen-browser; inherit system; };
             }
           ];
         };
