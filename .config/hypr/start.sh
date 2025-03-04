@@ -7,6 +7,5 @@ waybar &
 hyprpaper &
 
 # Other apps
-discord &
+zen &
 kitty &
-dunst &
