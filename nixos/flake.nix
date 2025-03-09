@@ -42,7 +42,7 @@
               home-manager.useUserPackages = true;
 
               home-manager.users.cooper = import ./hosts/cooper/home.nix;
-              home-manager.extraSpecialArgs = { inherit zen-browser; inherit system; };
+              home-manager.extraSpecialArgs = { zen-browser = zen-browser.packages."${system}".default; inherit system; };
             }
           ];
         };

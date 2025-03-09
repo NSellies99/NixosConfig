@@ -91,7 +91,6 @@
     ./hardware-configuration.nix
     ../../nixosModules/gaming
     ../../nixosModules/window-manager
-    ../../nixosModules/common/clamav.nix
   ];
 
   # Nvidia drivers
