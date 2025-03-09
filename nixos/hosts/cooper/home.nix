@@ -25,7 +25,6 @@ in
       protonup
       zen-browser
     ];
-
   };
 
   imports = [

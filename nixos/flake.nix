@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvf.url = "github:notashelf/nvf";
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
@@ -16,6 +18,7 @@
     { self
     , nixpkgs
     , home-manager
+    , nvf
     , zen-browser
     , ...
     }@inputs:
@@ -30,7 +33,9 @@
           inherit system;
           specialArgs = { inherit secrets; };
           modules = [
+	    nvf.nixosModules.default
             ./hosts/cooper/configuration.nix
+	    ./nvf-configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
