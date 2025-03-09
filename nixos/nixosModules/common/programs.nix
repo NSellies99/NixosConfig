@@ -28,5 +28,8 @@
     thunderbird
     gimp
     keepass
+
+    # Media
+    vlc
   ];
 }
