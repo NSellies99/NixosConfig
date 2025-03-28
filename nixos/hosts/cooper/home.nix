@@ -29,6 +29,7 @@ in
 
   imports = [
     ../../nixosModules/common
+    ../../nixosModules/terminal
   ];
 
   services = {

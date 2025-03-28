@@ -8,5 +8,7 @@
     settings = {
       background_opacity = "0.7";
     };
+
+    extraConfig = "shell fish";
   };
 }
