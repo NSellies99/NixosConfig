@@ -30,6 +30,7 @@ in
   imports = [
     ../../nixosModules/common
     ../../nixosModules/terminal
+    ../../nixosModules/neovim
   ];
 
   services = {

@@ -9,7 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf.url = "github:notashelf/nvf";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
@@ -24,25 +27,35 @@
     }@inputs:
     let
       system = "x86_64-linux";
+
+      # Get secrets from local file
       secrets = builtins.fromJSON (builtins.readFile "${self}/.secrets/secrets.json");
     in
     {
+      # Nix formatter
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+
+      # Configurations
       nixosConfigurations = {
         cooper = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit secrets; };
+
           modules = [
-	    nvf.nixosModules.default
             ./hosts/cooper/configuration.nix
-	    ./nvf-configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
               home-manager.users.cooper = import ./hosts/cooper/home.nix;
-              home-manager.extraSpecialArgs = { zen-browser = zen-browser.packages."${system}".default; inherit system; };
+
+              home-manager.sharedModules = [ nvf.homeManagerModules.default ];
+
+              home-manager.extraSpecialArgs = {
+                zen-browser = zen-browser.packages."${system}".default;
+                inherit system;
+              };
             }
           ];
         };
