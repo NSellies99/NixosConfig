@@ -1,22 +1,20 @@
 { pkgs, ... }:
 {
   # Install kitty for default config
-  environment.systemPackages = with pkgs; [
-    kitty
-  ];
+  programs.kitty.enable = true;
 
   # Enable hyprland and support nvidia
-  programs.hyprland = {
+  wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
-  programs.sway = {
+  wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
   };
 
-  environment.sessionVariables = {
+  home.sessionVariables = {
     # Fixes cursor invisibility issue
     WLR_NO_HARDWARE_CURSOR = "1";
     # Hint electron apps to use wayland
