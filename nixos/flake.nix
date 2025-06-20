@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +54,7 @@
 
               home-manager.sharedModules = [ nvf.homeManagerModules.default ];
 
+              home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
                 zen-browser = zen-browser.packages."${system}".default;
                 inherit system;

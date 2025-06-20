@@ -2,6 +2,7 @@
 let
   settings = builtins.fromJSON (builtins.readFile (./. + "/settings.json"));
   username = settings.user.username;
+  dotfilesPath = ../../../.config;
 in
 {
   home = {
@@ -18,6 +19,11 @@ in
     # For enabling proton
     sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    };
+
+    file = {
+      ".config/hypr".source = dotfilesPath + /hypr;
+      ".config/waybar".source = dotfilesPath + /waybar;
     };
 
 

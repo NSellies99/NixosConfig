@@ -11,6 +11,9 @@
     unzip
     p7zip
 
+    # Coding
+    vscode
+
     # Office
     libreoffice-qt
     hunspell

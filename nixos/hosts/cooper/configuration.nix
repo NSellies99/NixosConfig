@@ -112,6 +112,9 @@
     };
   };
 
+  # Enable hyprland
+  programs.hyprland.enable = true;
+
   # Limit generations to 10
   boot.loader.systemd-boot.configurationLimit = 10;
 

@@ -1,12 +1,13 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # Install kitty for default config
   programs.kitty.enable = true;
 
-  # Enable hyprland and support nvidia
+  # Enable hyprland for home manager and support nvidia
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    settings = {};
   };
 
   wayland.windowManager.sway = {
