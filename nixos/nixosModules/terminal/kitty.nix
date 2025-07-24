@@ -6,6 +6,7 @@
 
     # Visual
     settings = {
+      font_family = "Miracode";
       background_opacity = "0.7";
     };
 
