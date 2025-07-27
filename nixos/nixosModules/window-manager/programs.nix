@@ -4,6 +4,7 @@
     rofi-wayland
     libnotify
     hyprlock
-    hyprpaper
+    swww
+    wlogout
   ];
 }
