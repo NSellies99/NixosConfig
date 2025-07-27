@@ -32,6 +32,7 @@
     gimp
     keepass
     yazi
+    nerdfetch
 
     # Media
     vlc
