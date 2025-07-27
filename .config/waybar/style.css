@@ -1,24 +1,74 @@
-window#waybar {
-  background: #FA8128;
-  opacity: 0.8;
-  border-width: 2px;
-  border-color: #ED7117;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 55px;
+@import "colours.css";
+
+* {
+  border: 0;
+  padding: 0 0;
+  font-family: Miracode;
 }
 
-.module {
-  border-radius: 2px;
-  padding: 0px 4px;
-  font-size: 13px;
+window#waybar {
+  border: 0px solid;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces {
   font-size: 8px;
 }
 
-* {
- font-family: Miracode;
+#pulseaudio,
+#temperature,
+#clock,
+#custom-swap,
+#network,
+#custom-power,
+#custom-launcher {
+  padding: 5px 8px;
+  border-style: solid;
+  opacity: 0.8;
+  margin: 8px 0;
+  border-radius: 10px;
+}
+
+#clock {
+  margin: 8px 10px;
+  background-color: @Rose;
+  color: @EerieBlack;
+}
+
+#custom-launcher {
+  padding-right: 10px;
+  margin-left: 11px;
+  background-color: @ElectricBlue;
+  color: @EerieBlack;
+}
+
+#network {
+  margin-right: 15px;
+  background-color: @ImperialRed;
+  color: @EerieBlack;
+}
+
+#custom-power {
+  margin-right: 10px;
+  padding-right: 11px;
+  background-color: @ImperialRed;
+}
+
+#custom-swap {
+  margin-left: 10px;
+  padding-right: 11px;
+  background-color: @ElectricBlue;
+  color: @EerieBlack;
+}
+
+#temperature {
+  margin-right: 15px;
+  background-color: @ImperialRed;
+  color: @EerieBlack;
+}
+
+#pulseaudio {
+  margin-right: 10px;
+  background: @ImperialRed;
+  color: @EerieBlack;
 }
