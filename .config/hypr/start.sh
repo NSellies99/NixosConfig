@@ -3,9 +3,9 @@
 # Start the bar
 waybar &
 
-# Wallpapers
-hyprpaper &
-
 # Other apps
 zen &
 kitty &
+
+# Wallpapers
+swww-daemon
