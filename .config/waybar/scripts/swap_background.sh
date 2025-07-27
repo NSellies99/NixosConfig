@@ -1,8 +1,5 @@
 #!/bin/bash
-
-current_background_dir="${HOME}/.config/hyprpaper/"
-backgrounds_dir="${HOME}/.config/hyprpaper/assets/"
-background_name="${HOME}/.config/hyprpaper/assets/current_background.png"
+backgrounds_dir="${HOME}/.config/wallpapers/assets/"
 
 # Get information about the backgrounds
 background_count=$(ls "$backgrounds_dir" -1 | wc -l)
