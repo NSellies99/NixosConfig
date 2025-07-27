@@ -18,10 +18,12 @@
       statusline.lualine.enable = true;
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
+      
+      # LSP
+      lsp.enable = true;
 
       # Lanuages
       languages = {
-        enableLSP = true;
         enableTreesitter = true;
 
         nix.enable = true;
