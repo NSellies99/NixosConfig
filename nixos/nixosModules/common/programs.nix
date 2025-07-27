@@ -31,6 +31,7 @@
     thunderbird
     gimp
     keepass
+    yazi
 
     # Media
     vlc
