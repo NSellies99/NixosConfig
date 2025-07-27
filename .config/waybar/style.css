@@ -25,7 +25,7 @@ window#waybar {
   padding: 5px 8px;
   border-style: solid;
   opacity: 0.8;
-  margin: 8px 0;
+  margin: 10px 0px 5px 0px;
   border-radius: 10px;
 }
 
