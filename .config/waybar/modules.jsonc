@@ -42,5 +42,9 @@
                 "format-ethernet": "<span rise=\"2pt\">󰈀</span> {ifname}: {ipaddr}/{cidr}",
                 "format-disconnected": "<span rise=\"2pt\"></span> Disconnected",
                 "on-click": "nm-connection-editor"
+        },
+        "pulseaudio":{
+                "format": "{volume}% <span rise=\"2pt\"></span>",
+                "on-click": "pwvucontrol"
         }
 }

@@ -38,5 +38,6 @@
 
     # Media
     vlc
+    pwvucontrol
   ];
 }
