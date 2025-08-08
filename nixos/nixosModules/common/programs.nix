@@ -33,6 +33,7 @@
     keepass
     yazi
     nerdfetch
+    openssl
 
     # Media
     vlc

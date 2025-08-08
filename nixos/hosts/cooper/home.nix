@@ -39,6 +39,7 @@ in
     ../../nixosModules/terminal
     ../../nixosModules/neovim
     ../../nixosModules/window-manager
+    ../../nixosModules/programming
   ];
 
   services = {

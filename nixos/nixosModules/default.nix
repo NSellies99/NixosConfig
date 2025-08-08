@@ -2,5 +2,6 @@
   imports = [
     ./common
     ./gaming
+    ./programing
   ];
 }
