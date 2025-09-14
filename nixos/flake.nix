@@ -1,6 +1,4 @@
 {
-  description = "Flake for my desktop";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
@@ -8,8 +6,6 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland.url = "github:hyprwm/Hyprland";
 
     nvf = {
       url = "github:notashelf/nvf";
@@ -19,14 +15,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , home-manager
-    , nvf
-    , zen-browser
-    , ...
-    }:
+  outputs = { self, nixpkgs, home-manager, nvf, zen-browser, ...}:
     let
       system = "x86_64-linux";
 

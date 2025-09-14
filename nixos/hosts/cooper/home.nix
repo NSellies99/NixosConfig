@@ -38,7 +38,7 @@ in
     ../../nixosModules/common
     ../../nixosModules/terminal
     ../../nixosModules/neovim
-    ../../nixosModules/window-manager
+    ../../hyprland
     ../../nixosModules/programming
   ];
 
