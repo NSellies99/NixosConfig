@@ -22,7 +22,6 @@ in
     };
 
     file = {
-      ".config/hypr".source = dotfilesPath + /hypr;
       ".config/waybar".source = dotfilesPath + /waybar;
       ".config/wallpapers".source = dotfilesPath + /wallpapers;
     };

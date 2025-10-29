@@ -4,10 +4,6 @@
   programs.kitty.enable = true;
 
   # Enable hyprland for home manager and support nvidia
-  wayland.windowManager.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   wayland.windowManager.sway = {
     enable = true;
@@ -21,5 +17,10 @@
     NIXOS_OZONE_WL = "1";
     # Flickering electron apps
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  };
+  
+  wayland.windowManager.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
 }
