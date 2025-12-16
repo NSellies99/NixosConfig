@@ -21,6 +21,7 @@
 
       # Get secrets from local file
       secrets = builtins.fromJSON (builtins.readFile "${self}/.secrets/secrets.json");
+      hostFolder = ./nixosModules/hosts;
     in
     {
       # Nix formatter
@@ -33,13 +34,13 @@
           specialArgs = { inherit secrets; };
 
           modules = [
-            ./hosts/cooper/configuration.nix
+            ./nixosModules/hosts/cooper/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.cooper = import ./hosts/cooper/home.nix;
+              home-manager.users.cooper = import ./nixosModules/hosts/cooper/home.nix;
 
               home-manager.sharedModules = [ nvf.homeManagerModules.default ];
 

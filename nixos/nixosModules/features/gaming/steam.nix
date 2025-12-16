@@ -1,4 +1,4 @@
-{ pgks, ... }:
+{ ... }:
 {
   programs.steam = {
     enable = true;

@@ -89,7 +89,7 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../../nixosModules/gaming
+    ../../features/gaming
   ];
 
   # Nvidia drivers

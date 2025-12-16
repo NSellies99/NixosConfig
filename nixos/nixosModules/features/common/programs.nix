@@ -35,6 +35,7 @@
     nerdfetch
     rawtherapee
     openssl
+    nmap
 
     # Media
     vlc
