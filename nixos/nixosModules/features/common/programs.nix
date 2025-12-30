@@ -36,6 +36,7 @@
     rawtherapee
     openssl
     nmap
+    protonmail-bridge
 
     # Media
     vlc
