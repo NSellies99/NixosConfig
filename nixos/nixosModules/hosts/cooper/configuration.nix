@@ -39,9 +39,6 @@
     LC_TIME = "nl_NL.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -94,22 +91,17 @@
 
   # Nvidia drivers
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "amdgpu" ];
+    enable = true;
   };
 
   hardware = {
     # OpenGL
     graphics.enable = true;
+    graphics.enable32Bit = true;
 
-    # Nvidia settings
-    nvidia = {
-      open = false;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-      nvidiaSettings = true;
-      modesetting.enable = true;
-      powerManagement.finegrained = false;
-      powerManagement.enable = false;
-    };
+    # Load amdgpu in the initial ramdisk
+    amdgpu.initrd.enable = true;
   };
 
   # Enable hyprland
