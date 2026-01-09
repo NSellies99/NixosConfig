@@ -10,20 +10,6 @@
         "3" = "";
       };
     };
-    "custom/swap" = {
-      on-click = pkgs.writeShellScript "swap-background.sh" ''
-        backgrounds_dir="../wallpapers"
-        
-        background_count=$(ls $backgrounds_dir -1 | wc -l)
-        backgrounds=$("$backgrounds_dir"*)
-
-        new_background_idx=$(($RANDOM % $background_count))
-        new_background=$($backgrounds[$new_background_idx])
-        swww img $($new_background) --transition-type left --transition-fps 60
-      '';
-      format = "";
-      tooltip = false;
-    };
     "clock" = {
       tooltip-format = "<tt><small>{calendar}</small></tt>";
       calendar = {

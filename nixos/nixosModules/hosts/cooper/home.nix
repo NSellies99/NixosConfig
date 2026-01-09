@@ -27,12 +27,6 @@ in
     ];
   };
 
-  # Wallpapers
-  home.file.wallpapers = {
-    recursive = true;
-    source = ../../visualization/wallpapers;
-  };
-
   imports = [
     ../../features/common
     ../../features/terminal

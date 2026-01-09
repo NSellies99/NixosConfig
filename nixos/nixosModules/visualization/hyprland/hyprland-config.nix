@@ -5,7 +5,6 @@
       "waybar &"
       "zen &"
       "kitty &"
-      "swww-daemon"
     ];
 
     general = {

@@ -11,7 +11,6 @@
         modules-left = [
           "custom/launcher"
           "sway/workspaces"
-          "custom/spaw"
         ];
         modules-center = [
           "clock"
