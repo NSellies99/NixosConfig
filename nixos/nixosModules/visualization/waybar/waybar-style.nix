@@ -1,0 +1,82 @@
+{ ... }:
+{
+  programs.waybar.style = ''
+    @define-color Rose #FF006E;
+    @define-color ElectricBlue #1BE7FF;
+    @define-color ImperialRed #FD2B3B;
+    @define-color EerieBlack #171717;
+      
+    * {
+      border: 0;
+      padding: 0 0;
+      font-family: Miracode;
+    }
+
+    window#waybar {
+      border: 0px solid;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    #workspaces {
+      font-size: 8px;
+    }
+
+    #pulseaudio,
+    #temperature,
+    #clock,
+    #custom-swap,
+    #network,
+    #custom-power,
+    #custom-launcher {
+      padding: 5px 8px;
+      border-style: solid;
+      opacity: 0.8;
+      margin: 10px 0px 5px 0px;
+      border-radius: 10px;
+    }
+
+    #clock {
+      margin: 8px 10px;
+      background-color: @Rose;
+      color: @EerieBlack;
+    }
+
+    #custom-launcher {
+      padding-right: 10px;
+      margin-left: 11px;
+      background-color: @ElectricBlue;
+      color: @EerieBlack;
+    }
+
+    #network {
+      margin-right: 15px;
+      background-color: @ImperialRed;
+      color: @EerieBlack;
+    }
+
+    #custom-power {
+      margin-right: 10px;
+      padding-right: 11px;
+      background-color: @ImperialRed;
+    }
+
+    #custom-swap {
+      margin-left: 10px;
+      padding-right: 11px;
+      background-color: @ElectricBlue;
+      color: @EerieBlack;
+    }
+
+    #temperature {
+      margin-right: 15px;
+      background-color: @ImperialRed;
+      color: @EerieBlack;
+    }
+
+    #pulseaudio {
+      margin-right: 10px;
+      background: @ImperialRed;
+      color: @EerieBlack;
+    }
+  '';
+}

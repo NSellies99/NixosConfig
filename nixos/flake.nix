@@ -1,6 +1,4 @@
 {
-  description = "Flake for my desktop";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
@@ -8,8 +6,6 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland.url = "github:hyprwm/Hyprland";
 
     nvf = {
       url = "github:notashelf/nvf";
@@ -19,19 +15,13 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , home-manager
-    , nvf
-    , zen-browser
-    , ...
-    }:
+  outputs = { self, nixpkgs, home-manager, nvf, zen-browser, ...}:
     let
       system = "x86_64-linux";
 
       # Get secrets from local file
       secrets = builtins.fromJSON (builtins.readFile "${self}/.secrets/secrets.json");
+      hostFolder = ./nixosModules/hosts;
     in
     {
       # Nix formatter
@@ -44,13 +34,13 @@
           specialArgs = { inherit secrets; };
 
           modules = [
-            ./hosts/cooper/configuration.nix
+            ./nixosModules/hosts/cooper/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.cooper = import ./hosts/cooper/home.nix;
+              home-manager.users.cooper = import ./nixosModules/hosts/cooper/home.nix;
 
               home-manager.sharedModules = [ nvf.homeManagerModules.default ];
 
