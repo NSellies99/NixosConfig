@@ -41,5 +41,6 @@
     # Media
     vlc
     pwvucontrol
+    ardour
   ];
 }
