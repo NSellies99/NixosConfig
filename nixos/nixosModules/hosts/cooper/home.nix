@@ -11,7 +11,7 @@ in
 
     # Home manager version
     enableNixpkgsReleaseCheck = false;
-    stateVersion = "24.11";
+    stateVersion = "25.11";
 
     # Get cursor loaded from settings
     pointerCursor = import ../../visualization/cursor.nix ({ inherit pkgs; cursor = settings.cursor; });
@@ -22,7 +22,7 @@ in
     };
 
     packages = with pkgs; [
-      protonup
+      protonup-ng
       zen-browser
     ];
   };

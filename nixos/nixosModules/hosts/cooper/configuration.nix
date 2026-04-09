@@ -1,5 +1,4 @@
 { secrets
-, config
 , pkgs
 , ...
 }:
@@ -86,7 +85,7 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../../features/gaming
+    ../../features/gaming/steam.nix
   ];
 
   # Nvidia drivers
@@ -113,7 +112,7 @@
   # Optimize storage
   nix.settings.auto-optimise-store = true;
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.11";
 
   # Fonts
   fonts.packages = with pkgs; [
