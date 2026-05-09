@@ -42,5 +42,9 @@
     vlc
     pwvucontrol
     ardour
+
+    # Social
+    vesktop
+    telegram-desktop
   ];
 }

@@ -2,9 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "waybar &"
-      "zen &"
-      "kitty &"
+      "waybar"
     ];
 
     general = {
