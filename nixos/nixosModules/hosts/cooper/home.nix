@@ -31,7 +31,6 @@ in
     ../../features/common
     ../../features/terminal
     ../../features/neovim
-    ../../features/programming
     ../../visualization
   ];
 
