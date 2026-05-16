@@ -42,6 +42,7 @@
     vlc
     pwvucontrol
     ardour
+    gpodder
 
     # Social
     vesktop
