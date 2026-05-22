@@ -8,6 +8,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+
+  # Copyfail fix
+  boot.kernelPackages = pkgs.lib.mkIf (pkgs.lib.versionOlder pkgs.linux.version "6.18.22") (
+    pkgs.lib.mkDefault pkgs.linuxPackages_6_18
+  );
+
   # Define hostname.
   networking.hostName = "cooper";
 
