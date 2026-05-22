@@ -1,5 +1,5 @@
 {
-  flake-parts.nixosModules.nix = {pkgs, ...}: {
+  flake.nixosModules.mail = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.thunderbird
       pkgs.protonmail-bridge

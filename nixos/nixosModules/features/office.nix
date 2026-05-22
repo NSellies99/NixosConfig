@@ -1,5 +1,5 @@
 {
-  flake-parts.nixosModules.nix = {pkgs, ...}: {
+  flake.nixosModules.office = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.libreoffice-qt
       pkgs.hunspell

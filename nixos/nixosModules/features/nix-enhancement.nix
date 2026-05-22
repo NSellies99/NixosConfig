@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.nix = {pkgs, ...}: {
+  flake.nixosModules.nix-enhancement = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.nh
     ];
