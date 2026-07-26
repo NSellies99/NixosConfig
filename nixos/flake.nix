@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-26.05-chilled/0.1";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -21,7 +21,6 @@
 
       # Get secrets from local file
       secrets = builtins.fromJSON (builtins.readFile "${self}/.secrets/secrets.json");
-      hostFolder = ./nixosModules/hosts;
     in
     {
       # Nix formatter
