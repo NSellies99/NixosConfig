@@ -4,7 +4,6 @@
     rofi
     libnotify
     hyprlock
-    swww
     wlogout
   ];
 }
