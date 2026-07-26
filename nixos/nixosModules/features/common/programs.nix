@@ -43,6 +43,7 @@
     pwvucontrol
     ardour
     gpodder
+    obs-studio
 
     # Social
     vesktop
