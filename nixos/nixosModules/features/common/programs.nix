@@ -24,6 +24,7 @@
     neovim
     planify
     obsidian
+    vivaldi
 
     # All round
     grimblast
@@ -41,7 +42,7 @@
     # Media
     vlc
     pwvucontrol
-    ardour
+    musescore
     gpodder
     obs-studio
 

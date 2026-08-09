@@ -11,11 +11,9 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, zen-browser, ...}:
+  outputs = { self, nixpkgs, home-manager, nvf, ...}:
     let
       system = "x86_64-linux";
 
@@ -44,10 +42,6 @@
               home-manager.sharedModules = [ nvf.homeManagerModules.default ];
 
               home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = {
-                zen-browser = zen-browser.packages."${system}".default;
-                inherit system;
-              };
             }
           ];
         };

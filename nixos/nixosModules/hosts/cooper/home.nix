@@ -1,4 +1,4 @@
-{ pkgs, zen-browser, ... }:
+{ pkgs, ... }:
 let
   settings = builtins.fromJSON (builtins.readFile (./. + "/settings.json"));
   username = settings.user.username;
@@ -23,7 +23,6 @@ in
 
     packages = with pkgs; [
       protonup-ng
-      zen-browser
     ];
   };
 
