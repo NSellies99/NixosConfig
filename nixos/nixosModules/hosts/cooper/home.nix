@@ -31,6 +31,7 @@ in
     ../../features/terminal
     ../../features/neovim
     ../../visualization
+    ../../features/gaming/lutris.nix
   ];
 
   services = {
