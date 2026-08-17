@@ -1,21 +1,29 @@
 {
-  flake.nixosModules.dropbox = {pkgs, ...}: {
+  flake.nixosModules.dropbox = {pkgs, lib, ...}: {
     environment.systemPackages = [
       pkgs.dropbox-cli
     ];
 
+    networking.firewall = {
+      allowedTCPPorts = [ 17500 ];
+      allowedUDPPorts = [ 17500 ];
+    };
+
     systemd.user.services.dropbox = {
-      Unit = {
-        Description = "Dropbox service";
+      description = "Dropbox";
+      wantedBy = [ "graphical-session.target" ];
+      environment = {
+        QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
+        QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
       };
-
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
-
-      Service = {
-        ExecStart = "${pkgs.dropbox}/bin/dropbox";
+      serviceConfig = {
+        ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
+        ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
+        KillMode = "control-group"; # upstream recommends process
         Restart = "on-failure";
+        PrivateTmp = true;
+        ProtectSystem = "full";
+        Nice = 10;
       };
     };
   };

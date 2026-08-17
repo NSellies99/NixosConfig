@@ -1,49 +1,36 @@
-{ pkgs, zen-browser, ... }:
-let
-  settings = builtins.fromJSON (builtins.readFile (./. + "/settings.json"));
-  username = settings.user.username;
-in
+{self, inputs, ... }:
 {
-  home = {
-    # User values
-    inherit username;
-    homeDirectory = "/home/${username}";
-
-    # Home manager version
-    enableNixpkgsReleaseCheck = false;
-    stateVersion = "25.11";
-
-    # Get cursor loaded from settings
-    pointerCursor = import ../../visualization/cursor.nix ({ inherit pkgs; cursor = settings.cursor; });
-
-    # For enabling proton
-    sessionVariables = {
-      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-    };
-
-    packages = with pkgs; [
-      protonup-ng
-      zen-browser
+  flake.homeConfiguration.cooper = inputs.home-manager.lib.homeManagerConfiguration {
+    pks = import inputs.nixpkgs { system = "x86_64-linux"; };
+    modules = [
+      self.homeModules.cooper {
+        home.username = "cooper";
+        home.homeDirectory = "/home/cooper";
+      }
     ];
   };
 
-  imports = [
-    ../../features/common
-    ../../features/terminal
-    ../../features/neovim
-    ../../visualization
-  ];
+  flake.homeModules.cooper = { pkgs, ... }:
+  {
+    enableNixpkgsReleaseCheck = false;
+    sessionVariables = { STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d"; };
+    home.packages = [ pkgs.protonup-ng ];
 
-  services = {
-    gpg-agent = {
-      enable = true;
-      pinentry.package = pkgs.pinentry-qt;
+    services = {
+      gpg-agent = {
+        enable = true;
+        pinentry.pkgs = pkgs.pinentry;
+      };
     };
-  };
 
-  programs = {
-    home-manager = {
+    programs.git = {
       enable = true;
+      userEmail = "mail@nielssellies.nl";
+      userName = "Niels";
+    
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
     };
   };
 }
