@@ -8,24 +8,37 @@
 
   flake.nixosModules.hostCooper = { pkgs, ... }: {
     imports = [
-      self.nixosModules.clamav
+      # Social
+      self.nixosModules.telegram
       self.nixosModules.discord
-      self.nixosModules.dropbox
+
+      # Nix
+      self.nixosModules.homeManager
+      self.nixosModules.nixEnhancement
+
+      # Gaming
+      self.nixosModules.steam
+      self.nixosModules.minecraft
+
+      # Media
+      self.nixosModules.vivaldi
+      self.nixosModules.gpodder
+      self.nixosModules.vlc
+      self.nixosModules.nicotine
+
+      # Productivity
       self.nixosModules.gimp
       self.nixosModules.git
-      self.nixosModules.homeManager
       self.nixosModules.keepass
       self.nixosModules.mail
-      self.nixosModules.nixEnhancement
-      self.nixosModules.office
-      self.nixosModules.pcFunctionality
-      self.nixosModules.planify
-      self.nixosModules.steam
-      self.nixosModules.telegram
-      self.nixosModules.vivaldi
-      self.nixosModules.vlc
       self.nixosModules.zip
+      self.nixosModules.office
       self.nixosModules.vscode
+      self.nixosModules.protonVpn
+      self.nixosModules.dropbox
+      self.nixosModules.planify
+      self.nixosModules.pcFunctionality
+      self.nixosModules.clamav
     ];
 
     # Bootloader.
