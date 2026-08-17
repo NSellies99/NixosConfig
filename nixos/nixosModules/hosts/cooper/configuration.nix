@@ -25,6 +25,7 @@
       self.nixosModules.gpodder
       self.nixosModules.vlc
       self.nixosModules.nicotine
+      self.nixosModules.asunder
 
       # Productivity
       self.nixosModules.gimp
