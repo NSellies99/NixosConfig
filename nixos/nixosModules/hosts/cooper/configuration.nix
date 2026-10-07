@@ -19,6 +19,7 @@
       # Gaming
       self.nixosModules.steam
       self.nixosModules.minecraft
+      self.nixosModules.lutris
 
       # Media
       self.nixosModules.vivaldi
