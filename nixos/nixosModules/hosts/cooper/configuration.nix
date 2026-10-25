@@ -27,6 +27,7 @@
       self.nixosModules.vlc
       self.nixosModules.nicotine
       self.nixosModules.asunder
+      self.nixosModules.musescore
 
       # Productivity
       self.nixosModules.gimp
